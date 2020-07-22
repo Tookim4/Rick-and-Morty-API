@@ -1,0 +1,134 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: #000000 url(./images/bgtexture.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;  
+    height: 100vh;  
+}
+
+.App{
+  max-width: 1300px;
+  margin: auto;
+}
+
+.main-header{
+    display: flex;
+}
+
+.brand-logo{
+    color: rgb(216, 216, 29);
+    max-width: 300px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.buttons{
+    margin-left: auto;
+    padding: 50px;
+}
+.buttons button {
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 10px;
+    background-color: rgb(216, 216, 29);
+    border: none;
+    transition: 0.5s;
+}
+.buttons button:hover {
+    background-color: rgb(68, 68, 6);
+    color: #fff3b0;
+}
+
+.search{
+    height: 100px;
+}
+input[type=text] {
+    display: block;
+    padding: 10px;
+    margin: auto;
+    width: 300px;
+    background-color: transparent;
+    border: 1px solid rgb(216, 216, 29);
+    color: rgb(216, 216, 29);
+}input[type=text]:focus {
+    border: 1px solid rgb(216, 216, 29);
+    columns: rgb(216, 216, 29);
+}
+
+.displaylayout{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+}
+
+.card{
+  cursor: pointer;
+  position: relative;
+  height: 300px;
+  color: white;
+}
+
+.card img{
+  opacity: 1;
+  transition: 0.6s;
+  backface-visibility: hidden;
+}
+
+.back-card {
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  transition: ease 1s;
+}
+
+.back-card h1{
+  font-size: 25px;
+  border-bottom: 1px #fff solid;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.list-details{
+  list-style: none;
+}
+
+.card:hover img{
+  color: rgb(216, 216, 29);
+  opacity: 0.3;
+}
+.card:hover .back-card{
+  color: rgb(216, 216, 29);
+  display: block;
+}
+
+.footer{
+  height: 70px;
+  margin-top: 30px;
+  text-align: center;
+  color: rgb(216, 216, 29);
+  border-top: 2px solid rgb(216, 216, 29);
+}
+.footer-text {
+  padding-top: 20px;
+}
+
+@media (max-width: 800px) {
+  .displaylayout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .displaylayout {
+    grid-template-columns: 1fr;
+  }
+}
