@@ -10,7 +10,7 @@
 
 html,
 body{
-    font-family: 'Satisfy', cursive;
+    font-family: 'Syne', sans-serif;
     background: #000000 url(./images/bgtexture.jpg);
     background-repeat: no-repeat;
     background-size: cover;  
@@ -22,36 +22,15 @@ body{
   margin: auto;
 }
 
-.main-header{
-    display: flex;
-}
+
 
 .brand-logo{
+  position: relative;
+    left: 50%;
+    transform: translate(-50%);
     max-width: 300px;
     padding: 10px;
     margin: 10px;
-}
-
-.buttons{
-    margin-left: auto;
-    padding: 50px;
-}
-.buttons button {
-    color: var(--main-color);
-    text-align: center;
-    cursor: pointer;
-    padding: 5px;
-    margin: 10px;
-    background: none;
-    border: 2px solid var(--main-color);
-    transition: 0.5s;
-}
-.buttons button:hover {
-    background-color: var(--main-color);
-    color: #fff3b0;
-}
-.buttons button:active{
-  box-shadow: inset 0 -1px var(--main-color);
 }
 
 .search{
@@ -84,7 +63,7 @@ input[type=text] {
   position: relative;
   height: 300px;
   color: white;
-  font-family: 'Satisfy', cursive;
+  font-family: 'Syne', sans-serif;
 
 }
 
