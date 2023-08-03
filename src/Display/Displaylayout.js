@@ -11,8 +11,8 @@ const Displaylayout = ({actors}) => {
                 
                     {/* <section className='displaylayout'> */}
                         {actors.map((actor, key)=>(
-                            <Col md={3} sm={4} xs={12}>
-                              <Characterdata key={actor.id} actor={actor}></Characterdata>
+                            <Col md={3} sm={4} xs={12} key={actor.id}>
+                              <Characterdata actor={actor}></Characterdata>
                             </Col>
                         ))
                             }

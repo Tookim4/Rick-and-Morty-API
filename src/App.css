@@ -19,7 +19,9 @@ body{
   /* font-family: 'Ruda', sans-serif; */
   font-family: 'Alegreya Sans SC', sans-serif;
     /* font-family: 'Syne', sans-serif; */
-    background: #000000 url(./images/bgtexture.jpg);
+    background: #000000af url(./images/b7.jpg);
+    background-blend-mode: overlay;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;  
