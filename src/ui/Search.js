@@ -13,7 +13,7 @@ const Search = ({getQuery}) => {
             <form>
                 <input
                 type='text'
-                className='form-control'
+                // className='form-control'
                 placeholder='Search Library'
                 value={text}
                 onChange={(e)=>onWrite(e.target.value)}    

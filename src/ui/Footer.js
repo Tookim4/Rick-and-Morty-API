@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <div className='footer'>
             <p className='footer-text'>
-                Rick and Morty | By Kim Too.
+                Rick and Morty API | Kimutai Too.
             </p>    
         </div>
     )

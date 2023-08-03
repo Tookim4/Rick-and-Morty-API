@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Ruda&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&display=swap');
+
 :root{
-  --main-color: #31b2d6;
+  --main-color: #374259;
+  --text-color: #F2D8D8;
+  --text-color2: #5C8984;
+  --text-grey: #545B77;
 }
 
 *{
@@ -10,7 +16,9 @@
 
 html,
 body{
-    font-family: 'Syne', sans-serif;
+  /* font-family: 'Ruda', sans-serif; */
+  font-family: 'Alegreya Sans SC', sans-serif;
+    /* font-family: 'Syne', sans-serif; */
     background: #000000 url(./images/bgtexture.jpg);
     background-repeat: no-repeat;
     background-size: cover;  
@@ -34,18 +42,22 @@ body{
 }
 
 .search{
-    height: 100px;
+  padding-bottom: 5%;
+  display: flex;
+  justify-content: center;
+  
 }
 input[type=text] {
+  font-size: 2em;
     border: 0;
     background: none;
-    border-bottom: 2px solid var(--main-color);
+    border-bottom: 2px solid var(--text-color);
     margin: auto;
     width: 300px;
     border-radius: 0;
     transition: 0.5s;
 }input[type=text]:focus {
-    color: var(--main-color);
+    color: var(--text-color);
     outline: none;
     border-bottom: 2px solid;
     background: none;
@@ -53,19 +65,29 @@ input[type=text] {
 }
 
 .displaylayout{
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1rem;
+    grid-gap: 1rem; */
 }
 
 .card{
   cursor: pointer;
   position: relative;
-  height: 300px;
+  width: 30rem;
+  height: auto;
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
   color: white;
-  font-family: 'Syne', sans-serif;
+   font-family: 'Ruda', sans-serif;
+  font-size: 1em;
 
+  @media (max-width: 992px) {
+    font-size: 0.8em;
+  }
 }
+/* .card-content {
+  background: var(--main-color);
+} */
 
 
 [class^='imghvr-'],
@@ -75,15 +97,26 @@ input[type=text] {
 
 
 .list-details{
+  padding-top: 5%;
   list-style: none;
+  color: var(--text-color);
+
+  & li {
+    padding: 1% 0;
+    /* color: var(--text-color2); */
+
+    & strong {
+      color: var(--text-color2);
+    }
+  }
 }
 
 .footer{
   height: 70px;
   margin-top: 30px;
   text-align: center;
-  color: var(--main-color);
-  border-top: 2px solid var(--main-color);
+  color: var(--text-color);
+  border-top: 2px solid var(--text-color);
 }
 .footer-text {
   padding-top: 20px;
