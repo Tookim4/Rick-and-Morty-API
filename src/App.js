@@ -7,6 +7,8 @@ import Footer from './ui/Footer'
 import axios from 'axios'
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+// import { jellyTriangle } from 'ldrs'
+
 
 
 const App = ()=> {
@@ -14,9 +16,13 @@ const App = ()=> {
   const [query, setQuery] = useState('')
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(24);
+  const [loading, setLoading] = useState(false);
+
+  // jellyTriangle.register()
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       let allActors = [];
       let page = 1;
       let totalPages = 1;
@@ -32,6 +38,7 @@ const App = ()=> {
       }
 
       setActor(allActors);
+      setLoading(false);
     };
 
     fetchData();
@@ -60,7 +67,20 @@ const App = ()=> {
     <div className="App">
       <Header/>
       <Search getQuery={(q) => setQuery(q)}/>
-      <Displaylayout actors={currentActors}/>
+
+      {loading ? (
+        <div className="loader" style={{color: '#F2D8D8', fontSize: '25px'}}>
+          {/* <l-jelly-triangle
+            size="30"
+            speed="1.75" 
+            color="black" 
+          ></l-jelly-triangle> */}
+          Loading....
+        </div>
+      ) : (
+        <Displaylayout actors={currentActors}/>
+      )}
+    
       <div className='pagination-div'>
         <button onClick={prevPage} disabled={currentPage === 1}>
           <MdOutlineKeyboardArrowLeft />

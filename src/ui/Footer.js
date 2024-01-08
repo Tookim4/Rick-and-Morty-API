@@ -4,8 +4,8 @@ const Footer = () => {
     return (
         <div className='footer'>
             <p className='footer-text'>
-                Rick and Morty API | Kimutai Too.
-            </p>    
+                Rick and Morty Cast Library | DeathStroke.
+            </p>      
         </div>
     )
 }
