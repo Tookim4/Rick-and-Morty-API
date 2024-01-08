@@ -6,19 +6,19 @@ import '../App.css'
 const Displaylayout = ({actors}) => {
 
     return (
-        <Container style={{display: 'flex', justifyContent: 'center'}}>
-            <Row >
+        <Container style={{display: 'flex', justifyContent: 'center', flexWrap: 'wrap', padding: '10px', width: '100%'}}>
+            {/* <Row > */}
                 
                     {/* <section className='displaylayout'> */}
                         {actors.map((actor, key)=>(
-                            <Col md={3} sm={4} xs={12} key={actor.id}>
+                            <div style={{padding: '5px'}} className='character-div' key={actor.id}>
                               <Characterdata actor={actor}></Characterdata>
-                            </Col>
+                            </div>
                         ))
                             }
                     {/* </section> */}
                 
-            </Row>
+            {/* </Row> */}
         </Container>
     )
 }

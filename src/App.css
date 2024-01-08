@@ -76,13 +76,13 @@ input[type=text] {
 .card{
   cursor: pointer;
   position: relative;
-  width: 30rem;
-  height: auto;
+  width: 300px;
+  /* height: auto; */
   border: 1px solid var(--text-color);
   border-radius: 10px;
   color: white;
    font-family: 'Ruda', sans-serif;
-  font-size: 1em;
+  font-size: 0.9em;
 
   @media (max-width: 992px) {
     font-size: 0.8em;
