@@ -5,28 +5,73 @@ import Search from './ui/Search';
 import Displaylayout from './Display/Displaylayout';
 import Footer from './ui/Footer'
 import axios from 'axios'
+import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+
 
 const App = ()=> {
   const [actors, setActor] = useState([])
   const [query, setQuery] = useState('')
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(24);
 
   useEffect(() => {
-    const fetchData = async ()=> {
-      const results = await axios(
-        `https://rickandmortyapi.com/api/character?name=${query}`,
+    const fetchData = async () => {
+      let allActors = [];
+      let page = 1;
+      let totalPages = 1;
+
+      while (page <= totalPages) {
+        const results = await axios(
+          `https://rickandmortyapi.com/api/character?name=${query}&page=${page}`,
         );
-        console.log(results.data)
-        setActor(results.data.results)
+
+        allActors = [...allActors, ...results.data.results];
+        totalPages = results.data.info.pages;
+        page++;
+      }
+
+      setActor(allActors);
     };
+
     fetchData();
-  }, [query])
+  }, [query]);
+
+  const indexOfLastActor = currentPage * itemsPerPage;
+  const indexOfFirstActor = indexOfLastActor - itemsPerPage;
+  const currentActors = actors.slice(indexOfFirstActor, indexOfLastActor);
+
+  const totalPages = Math.ceil(actors.length / itemsPerPage);
+
+  const nextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
 
 
   return (
     <div className="App">
       <Header/>
       <Search getQuery={(q) => setQuery(q)}/>
-      <Displaylayout actors={actors}/>
+      <Displaylayout actors={currentActors}/>
+      <div className='pagination-div'>
+        <button onClick={prevPage} disabled={currentPage === 1}>
+          <MdOutlineKeyboardArrowLeft />
+        </button>
+        <button onClick={nextPage} disabled={currentPage === totalPages}>
+          <MdOutlineKeyboardArrowRight />
+        </button>
+        <p>
+          Page {currentPage} of {totalPages}
+        </p>
+      </div>
       <Footer/>
     </div>
   );

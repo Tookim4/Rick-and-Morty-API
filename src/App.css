@@ -79,7 +79,7 @@ input[type=text] {
   width: 30rem;
   height: auto;
   border: 1px solid var(--text-color);
-  border-radius: 5px;
+  border-radius: 10px;
   color: white;
    font-family: 'Ruda', sans-serif;
   font-size: 1em;
@@ -114,6 +114,25 @@ input[type=text] {
   }
 }
 
+
+/* PAGINATION STYLINGS */
+.pagination-div{
+  text-align: center;
+  margin-top: 20px;
+
+  & button {
+    background: none;
+    font-size: 30px;
+    color: var(--text-color);
+    border: none;
+  }
+  & p {
+    color: var(--text-color);
+  }
+}
+
+
+/* Footer stylings */
 .footer{
   height: 70px;
   margin-top: 30px;
