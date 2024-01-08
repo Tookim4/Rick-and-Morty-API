@@ -7,8 +7,6 @@ import Footer from './ui/Footer'
 import axios from 'axios'
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-// import { jellyTriangle } from 'ldrs'
-
 
 
 const App = ()=> {
@@ -18,7 +16,6 @@ const App = ()=> {
   const [itemsPerPage] = useState(24);
   const [loading, setLoading] = useState(false);
 
-  // jellyTriangle.register()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -70,11 +67,6 @@ const App = ()=> {
 
       {loading ? (
         <div className="loader" style={{color: '#F2D8D8', fontSize: '25px'}}>
-          {/* <l-jelly-triangle
-            size="30"
-            speed="1.75" 
-            color="black" 
-          ></l-jelly-triangle> */}
           Loading....
         </div>
       ) : (
